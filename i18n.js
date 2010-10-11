@@ -42,7 +42,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  *  ## Translation with tokens
  * 
- *  Mismatched number of tokens and replacements will not generate errors,
+ *  Mismatched number of tokens and replacements will (probably) not generate errors,
  *  but your output might not be what you expected ;-)
  * 
  *      // create a language set

@@ -18,7 +18,7 @@ i18n.js is a minimal library for easy translation of strings with support for re
 
 ## Translation with tokens
 
-Mismatched number of tokens and replacements will not generate errors,
+Mismatched number of tokens and replacements will (probably) not generate errors,
 but your output might not be what you expected ;-)
 
     // create a language set
