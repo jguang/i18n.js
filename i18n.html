@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta charset=utf-8 />
+		<title>i18n</title>	
+		<script src="i18n.js"></script>
+	</head>
+	<body>
+	    <script>
+	        var daDK = {
+	            locale : 'da-DK',
+	            values : {
+	                'hi Firstname: {1} Lastname: {2}' : 'DANSK Efternavn {2} Fornavn {1}',
+	                'no tokens' : 'ingen tokens'
+	            }
+	        };
+	        console.log( i18n.load( daDK ) );
+	        console.log( i18n.t( 'hi Firstname: {1} Lastname: {2}', 'Morgan', 'Roderick' ) );
+	        console.log( i18n.t( 'no tokens' ) );
+	        console.log( i18n.t( 'no translation defined' ) );
+	        console.log( i18n.t( 'no translation defined with {1}', 'tokens' ) );
+
+
+            console.log( '---' );
+
+	        console.log( i18n.t( 'too many %d %d %d %d', 'tokens' ) );
+	        console.log( i18n.t( 'too many %d', 'replacements', 'replacements' ) );
+	        
+	    </script>
+	</body>
+</html>
