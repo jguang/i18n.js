@@ -1,8 +1,5 @@
 i18n.js is a minimal library for easy translation of strings with support for replacement tokens 
 
-By default, the string '%d' will be used for replacements, you can set your own token by
-calling `i18n.setToken()` with your preferred token
-
 ## Simple translation
     // create a language set
     var daDK = {
