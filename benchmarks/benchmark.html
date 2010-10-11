@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>i18n.js Benchmarks</title>
+<link rel="stylesheet" href="benchmarks.css">
+<meta name="description" content="This is just a test document for benchmark.js.">
+<!--[if lte IE 8]><script src="html5.js"></script><![endif]-->
+<script src="benchmark.js"></script>
+</head>
+<body>
+<article>
+<hgroup>
+ <h1><code>i18n.js</code> test page</h1>
+ <h2>JavaScript performance comparison</h2>
+</hgroup>
+<h2>Info</h2>
+<p>This is just a test document for <code>i18n.js</code> used in development to check that performance doesn't degrade</p>
+<h2>Preparation code</h2>
+<pre><code>var locale = {
+    locale : 'da-DK',
+    values : {
+        'hello world'   : 'hej verden',
+        'hello {1}'     : 'hej {1}',
+        'hello {1} {2}' : 'hej {1} {2}'            
+    }
+}
+i18n.load( locale );
+</code></pre>
+<button id="run">Run tests</button>
+<noscript>
+    <strong>To run the tests, please enable JavaScript and reload the page.</strong>
+</noscript>
+<p id="status">
+    <span>Ready to run tests</span>
+</p>
+<table id="test-table">
+ <caption>Testing in <span id="user-agent">Chrome 5.0.375.126</span></caption>
+ <thead>
+  <tr>
+   <th colspan="2">Test</th>
+   <th title="Operations per second (higher is better)">Ops/sec</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th scope="row" id="title-1">i18n.t - no tokens<span id="extra-1"></span></th>
+   <td><pre><code>i18n.t('hello world');</code></pre></td>
+   <td id="results-1" class="results">pending…</td>
+  </tr>
+  <tr>
+   <th scope="row" id="title-2">i18n.t - 1 token<span id="extra-2"></span></th>
+   <td><pre><code>i18n.t('hello {1}', 'Morgan');</code></pre></td>
+   <td id="results-2" class="results">pending…</td>
+  </tr>
+  <tr>
+   <th scope="row" id="title-3">i18n.t - 2 tokens<span id="extra-2"></span></th>
+   <td><pre><code>i18n.t('hello {1} {2}', 'Morgan', 'Roderick');</code></pre></td>
+   <td id="results-3" class="results">pending…</td>
+  </tr>
+ </tbody>
+</table>
+
+<script src="../i18n.js"></script>
+<script>
+
+    var locale = {
+        locale : 'da-DK',
+        values : {
+            'hello world'   : 'hej verden',
+            'hello {1}'     : 'hej {1}',
+            'hello {1} {2}' : 'hej {1} {2}'            
+        }
+    }
+    i18n.load( locale );
+
+    benchmark.test('i18n.t - no tokens', 1, function(){
+        i18n.t('hello world');
+    });
+    
+    benchmark.test('i18n.t - 1 token', 2, function() {
+        i18n.t('hello {1}', 'Morgan');
+    });
+
+    benchmark.test('i18n.t - 2 tokens', 3, function() {
+        i18n.t('hello {1} {2}', 'Morgan', 'Roderick');
+    });
+</script>
+</article>
