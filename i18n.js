@@ -38,7 +38,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  *      // let's do some translation!
  *      console.log( i18n.t( 'hello world' ) );
- *      outputs 'hej verden!'
+ *      // outputs 'hej verden!'
  * 
  *  ## Translation with tokens
  * 

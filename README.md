@@ -14,7 +14,7 @@ i18n.js is a minimal library for easy translation of strings with support for re
 
     // let's do some translation!
     console.log( i18n.t( 'hello world' ) );
-    outputs 'hej verden!'
+    // outputs 'hej verden!'
 
 ## Translation with tokens
 
