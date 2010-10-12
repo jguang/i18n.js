@@ -42,24 +42,28 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  *  ## Translation with tokens
  * 
- *  Mismatched number of tokens and replacements will (probably) not generate errors,
+ *  Mismatched number of tokens and replacements will not generate errors,
  *  but your output might not be what you expected ;-)
  * 
- *      // create a language set
- *      var daDK = {
- *          locale : 'da-DK',
- *          values : {
- *              'hello {1}' : 'hej {1}'
- *          }
- *      };
- * 
- *      // load the language set
- *      i18n.load( daDK );
- * 
- *      // let's do some translation!
- *      console.log( i18n.t( 'hello {1}', 'Morgan' ) );
- *      // outputs 'hej Morgan'
- * 
+ *  // create a language set
+ *  var daDK = {
+ *      locale : 'da-DK',
+ *      values : {
+ *          'hello {1}' : 'hej {1}',
+ *          'hello {1} {2}', '{2} {1} hej!'
+ *      }
+ *  };
+ *
+ *  // load the language set
+ *  i18n.load( daDK );
+ *
+ *  // let's do some translation!
+ *  console.log( i18n.t( 'hello {1}', 'Morgan' ) );
+ *  // outputs 'hej Morgan'
+ *
+ *  // now let's try with multiple tokens, but with output in different order
+ *  console.log( i18n.t( 'hello {1} {2}', 'Morgan', 'Roderick' ) );
+ *  // outputs 'Morgan Roderick hej!' * 
 **/
 var i18n = (function(){
     "use strict";
